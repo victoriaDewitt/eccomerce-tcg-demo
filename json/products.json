@@ -1,0 +1,495 @@
+[
+  {
+    "id": 1,
+    "name": "Destined rivals",
+    "description": "Pokemon - Scarlet & Violet - Destined Rivals – Booster pack",
+    "price": 7.81,
+    "category": "booster",
+    "expansion": "Destined rivals",
+    "status": "available",
+    "image": "img/booster/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Journey together",
+    "description": "Pokemon - Scarlet & Violet - Journey together – Booster pack",
+    "price": 5.8,
+    "category": "booster",
+    "expansion": "Journey Together",
+    "status": "available",
+    "image": "img/booster/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Prismatic evolution",
+    "description": "Pokemon - Scarlet & Violet – prismatic evolutions – Booster pack",
+    "price": 10.28,
+    "category": "booster",
+    "expansion": "Prismatic Evolutions",
+    "status": "available",
+    "image": "img/booster/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Surging Sparks",
+    "description": "Pokemon - Scarlet & Violet - Surging Sparks, - Booster Pack",
+    "price": 7.12,
+    "category": "booster",
+    "expansion": "Surging Sparks",
+    "status": "available",
+    "image": "img/booster/4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Stellar Crown",
+    "description": "Pokemon - Scarlet & Violet – stellar Crown – Booster pack",
+    "price": 6.33,
+    "category": "booster",
+    "expansion": "Stellar Crown",
+    "status": "available",
+    "image": "img/booster/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Shrouded fable",
+    "description": "Pokemon - Scarlet & Violet - Shrouded Fable – Booster pack",
+    "price": 6.33,
+    "category": "booster",
+    "expansion": "Shrouded Fable",
+    "status": "available",
+    "image": "img/booster/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Twilight masquerade",
+    "description": "Pokemon - Scarlet & Violet - Twilight masquerade – Booster pack",
+    "price": 6.33,
+    "category": "booster",
+    "expansion": "Twilight Masquerade",
+    "status": "available",
+    "image": "img/booster/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Temporal forces",
+    "description": "Pokemon - Scarlet & Violet - Temporal forces – Booster pack",
+    "price": 5.8,
+    "category": "booster",
+    "expansion": "Temporal Forces",
+    "status": "available",
+    "image": "img/booster/8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Paldean fates",
+    "description": "Pokemon - Scarlet & Violet - Paldean fates – Booster pack",
+    "price": 5.8,
+    "category": "booster",
+    "expansion": "Paldean Fates",
+    "status": "available",
+    "image": "img/booster/9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Paradox rift",
+    "description": "Pokemon - Scarlet & Violet – Paradox rift– Booster pack",
+    "price": 6.33,
+    "category": "booster",
+    "expansion": "Paradox Rift",
+    "status": "available",
+    "image": "img/booster/10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Pokemon 151",
+    "description": "Pokemon - Scarlet & Violet – 151– Booster pack",
+    "price": 10.28,
+    "category": "booster",
+    "expansion": "Pokemon 151",
+    "status": "available",
+    "image": "img/booster/11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Obsidian flames",
+    "description": "Pokemon - Scarlet & Violet – Obsidian Flames– Booster pack",
+    "price": 6.33,
+    "category": "booster",
+    "expansion": "Obsidian Flames",
+    "status": "available",
+    "image": "img/booster/12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Paldea evolved",
+    "description": "Pokemon - Scarlet & Violet – Paldea evolved – Booster pack",
+    "price": 7.38,
+    "category": "booster",
+    "expansion": "Paldea Evolved",
+    "status": "available",
+    "image": "img/booster/13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Scarlet and violet base set",
+    "description": "Pokemon - Scarlet & Violet – base set – Booster pack",
+    "price": 6.86,
+    "category": "booster",
+    "expansion": "Base Set",
+    "status": "available",
+    "image": "img/booster/14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Destined Rivals ETB",
+    "description": "Pokemon - Scarlet & Violet - Destined Rivals – Elite Trainer Box",
+    "price": 89.13,
+    "category": "etb",
+    "expansion": "Destined rivals",
+    "status": "available",
+    "image": "img/etb/15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Journey Together ETB",
+    "description": "Pokemon - Scarlet & Violet - Journey together Elite Trainer Box",
+    "price": 70.67,
+    "category": "etb",
+    "expansion": "Journey Together",
+    "status": "available",
+    "image": "img/etb/16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Prismatic Evolution ETB",
+    "description": "Pokemon - Scarlet & Violet – prismatic evolutions – Elite Trainer Box",
+    "price": 116.02,
+    "category": "etb",
+    "expansion": "Prismatic Evolutions",
+    "status": "available",
+    "image": "img/etb/17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Surging Sparks ETB",
+    "description": "Pokemon - Scarlet & Violet – surging sparks – Elite Trainer Box",
+    "price": 83.85,
+    "category": "etb",
+    "expansion": "Surging Sparks",
+    "status": "available",
+    "image": "img/etb/18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Stellar Crown ETB",
+    "description": "Pokemon - Scarlet & Violet – stellar crown – Elite Trainer Box",
+    "price": 62.76,
+    "category": "etb",
+    "expansion": "Stellar Crown",
+    "status": "available",
+    "image": "img/etb/19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Shrouded Fable ETB",
+    "description": "Pokemon - Scarlet & Violet - Shrouded fable – Elite Trainer Box",
+    "price": 62.76,
+    "category": "etb",
+    "expansion": "Shrouded Fable",
+    "status": "available",
+    "image": "img/etb/20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Twilight Masquerade ETB",
+    "description": "Pokemon - Scarlet & Violet - Twilight masquerade – Elite Trainer Box",
+    "price": 70.67,
+    "category": "etb",
+    "expansion": "Twilight Masquerade",
+    "status": "available",
+    "image": "img/etb/21.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Temporal Forces ETB",
+    "description": "Pokemon - Scarlet & Violet - Temporal forces Elite Trainer Box",
+    "price": 62.76,
+    "category": "etb",
+    "expansion": "Temporal Forces",
+    "status": "available",
+    "image": "img/etb/22.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Paldean Fates ETB",
+    "description": "Pokemon - Scarlet & Violet – Paradox rift– Elite Trainer Box",
+    "price": 137.12,
+    "category": "etb",
+    "expansion": "Paldean Fates",
+    "status": "available",
+    "image": "img/etb/23.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Paradox Rift ETB",
+    "description": "Pokemon - Scarlet & Violet – Paradox rift– Elite Trainer Box",
+    "price": 62.76,
+    "category": "etb",
+    "expansion": "Paradox Rift",
+    "status": "available",
+    "image": "img/etb/24.jpg"
+  },
+  {
+    "id": 25,
+    "name": "151 ETB",
+    "description": "Pokemon - Scarlet & Violet – 151– Elite Trainer Box",
+    "price": 137.12,
+    "category": "etb",
+    "expansion": "Pokemon 151",
+    "status": "available",
+    "image": "img/etb/25.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Obsidian Flames ETB",
+    "description": "Pokemon - Scarlet & Violet – Obsidian Flames– Elite Trainer Box",
+    "price": 100.2,
+    "category": "etb",
+    "expansion": "Obsidian Flames",
+    "status": "available",
+    "image": "img/etb/26.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Paldea Evolved ETB",
+    "description": "Pokemon - Scarlet & Violet – Paldea evolved – Elite Trainer Box",
+    "price": 137.12,
+    "category": "etb",
+    "expansion": "Paldea Evolved",
+    "status": "available",
+    "image": "img/etb/27.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Base Set ETB",
+    "description": "Pokemon - Scarlet & Violet – base set – Elite Trainer Box",
+    "price": 70.67,
+    "category": "etb",
+    "expansion": "Base Set",
+    "status": "available",
+    "image": "img/etb/28.jpg"
+  },
+  {
+    "id": 29,
+    "name": "White Flare Binder Collection",
+    "description": "",
+    "price": "",
+    "category": "new_arrival",
+    "expansion": "new",
+    "status": "coming soon",
+    "image": "img/new_arrival/29.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Black Bolt Binder Collection",
+    "description": "",
+    "price": "",
+    "category": "new_arrival",
+    "expansion": "new",
+    "status": "coming soon",
+    "image": "img/new_arrival/30.jpg"
+  },
+  {
+    "id": 31,
+    "name": "White Flare & Black Bolt Poster Collection",
+    "description": "",
+    "price": "",
+    "category": "new_arrival",
+    "expansion": "new",
+    "status": "coming soon",
+    "image": "img/new_arrival/31.jpg"
+  },
+  {
+    "id": 32,
+    "name": "White Flare & Black Bolt Unnova Mini Tin",
+    "description": "",
+    "price": "",
+    "category": "new_arrival",
+    "expansion": "new",
+    "status": "coming soon",
+    "image": "img/new_arrival/32.jpg"
+  },
+  {
+    "id": 33,
+    "name": "White Flare & Black Bolt Tech Sticker Collection",
+    "description": "",
+    "price": "",
+    "category": "new_arrival",
+    "expansion": "",
+    "status": "coming soon",
+    "image": "img/new_arrival/33.jpg"
+  },
+  {
+    "id": 34,
+    "name": "White Flare & Black Bolt Unnova Victini Collection",
+    "description": "",
+    "price": "",
+    "category": "new_arrival",
+    "expansion": "",
+    "status": "coming soon",
+    "image": "img/new_arrival/34.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Charizard Ex Super Premium Collection",
+    "description": "",
+    "price": 81.22,
+    "category": "collection",
+    "expansion": "",
+    "status": "available",
+    "image": "img/collection/35.jpg"
+  },
+  {
+    "id": 36,
+    "name": "151 Ultra-Premium Collection",
+    "description": "",
+    "price": 205.68,
+    "category": "collection",
+    "expansion": "",
+    "status": "available",
+    "image": "img/collection/36.jpg"
+  },
+  {
+    "id": 37,
+    "name": "Terapagos Ex Ultra Premium Collection",
+    "description": "",
+    "price": 136.59,
+    "category": "collection",
+    "expansion": "",
+    "status": "available",
+    "image": "img/collection/37.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Prismatic Evolutions Ultra-Premium Collection",
+    "description": "",
+    "price": 184.05,
+    "category": "collection",
+    "expansion": "",
+    "status": "available",
+    "image": "img/collection/38.jpg"
+  },
+
+  {
+    "id": 41,
+    "name": "Destined Rivals Booster Box",
+    "description": "Pokemon - Scarlet & Violet - Destined Rivals – Booster box",
+    "price": 231.05,
+    "category": "booster_box",
+    "expansion": "Destined rivals",
+    "status": "available",
+    "image": "img/booster_box/41.jpg"
+  },
+
+  {
+    "id": 44,
+    "name": "Journey Together Booster Box",
+    "description": "Pokemon - Scarlet & Violet - Journey together – Booster box",
+    "price": 225.3,
+    "category": "booster_box",
+    "expansion": "Journey Together",
+    "status": "available",
+    "image": "img/booster_box/44.jpg"
+  },
+
+  {
+    "id": 49,
+    "name": "Surging Sparks Booster Box",
+    "description": "Pokemon - Scarlet & Violet - surging sparks – Booster box",
+    "price": 236.76,
+    "category": "booster_box",
+    "expansion": "Surging Sparks",
+    "status": "available",
+    "image": "img/booster_box/49.jpg"
+  },
+
+  {
+    "id": 52,
+    "name": "Stellar Crown Booster Box",
+    "description": "Pokemon - Scarlet & Violet – stellar crown – Booster box",
+    "price": 199.33,
+    "category": "booster_box",
+    "expansion": "Stellar Crown",
+    "status": "available",
+    "image": "img/booster_box/52.jpg"
+  },
+ 
+  {
+    "id": 57,
+    "name": "Twilight Masquerade Booster Box",
+    "description": "Pokemon - Scarlet & Violet - Twilight masquerade – Booster box",
+    "price": 147.32,
+    "category": "booster_box",
+    "expansion": "Twilight Masquerade",
+    "status": "available",
+    "image": "img/booster_box/57.jpg"
+  },
+  
+  {
+    "id": 60,
+    "name": "Temporal Forces Booster Box",
+    "description": "Pokemon - Scarlet & Violet - Temporal forces – Booster box",
+    "price": 209.1,
+    "category": "booster_box",
+    "expansion": "Temporal Forces",
+    "status": "available",
+    "image": "img/booster_box/60.jpg"
+  },
+
+  {
+    "id": 65,
+    "name": "Paradox Rift Booster Box",
+    "description": "Pokemon - Scarlet & Violet – Paradox rift– Booster box",
+    "price": 202.2,
+    "category": "booster_box",
+    "expansion": "Paradox Rift",
+    "status": "available",
+    "image": "img/booster_box/65.jpg"
+  },
+  
+  {
+    "id": 70,
+    "name": "Obsidian Flames Booster Box",
+    "description": "Pokemon - Scarlet & Violet – Obsidian Flames– Booster box",
+    "price": 242.02,
+    "category": "booster_box",
+    "expansion": "Obsidian Flames",
+    "status": "available",
+    "image": "img/booster_box/70.jpg"
+  },
+
+  {
+    "id": 73,
+    "name": "Paldea Evolved Booster Box",
+    "description": "Pokemon - Scarlet & Violet – Paldea evolved – Booster box",
+    "price": 310.43,
+    "category": "booster_box",
+    "expansion": "Paldea Evolved",
+    "status": "available",
+    "image": "img/booster_box/73.jpg"
+  },
+  
+  {
+    "id": 76,
+    "name": "Base Set Booster Box",
+    "description": "Pokemon - Scarlet & Violet – base set – Booster box",
+    "price": 184.15,
+    "category": "booster_box",
+    "expansion": "Base Set",
+    "status": "available",
+    "image": "img/booster_box/76.jpg"
+  }
+]
+
+
+

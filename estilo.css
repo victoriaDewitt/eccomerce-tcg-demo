@@ -1,0 +1,686 @@
+
+
+
+
+html, body {
+  height: 100%;
+}
+
+body  {
+     background-color: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  
+  }
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: linear-gradient(136deg, #0bbbbb 10%, #e824cd 90%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.main-header .logo img {
+  height: 50px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: #ffeb3b; /* Amarillo Pokémon al pasar el mouse */
+}
+
+.logopoki {
+  height: 100px;
+  margin-right: 20px;
+  background: none;
+}
+.btn-login {
+   font-size: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 15px;
+  background: white;
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #f0b800;
+}
+
+
+
+/* Modal (ventana emergente) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente oscuro */
+  backdrop-filter: blur(6px); /* Difumina lo de atrás */
+}
+/* Contenido modal */
+.modal-content {
+  background: linear-gradient(136deg, #0bbbbb 10%, #e824cd 90%);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  margin: 10% auto;
+  padding: 30px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Botón cerrar modal */
+.close {
+  align-self: flex-end;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.close:hover {
+  color: #e824cd;
+}
+
+/* Formulario dentro del modal */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content label {
+  font-weight: 600;
+  color: white;
+  text-align: left;
+}
+
+.modal-content input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.modal-content input:focus {
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(11, 187, 187, 0.4);
+}
+
+.modal-content button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  color: #0bbbbb;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-content button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  
+}
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 100px;
+  min-height: 500px;
+  overflow: hidden;
+
+}
+
+
+.logo-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('./img/259489-la-carte-de-hoenn-full-1.webp') center center / cover no-repeat;
+  opacity: 0.8; /* Ajusta la opacidad aquí */
+   background-color: rgba(0, 0, 0, 0.5); /* Esto agrega una capa oscura */
+  mix-blend-mode: multiply; /* Para oscurecer la imagen */
+  z-index: 0;
+}
+
+.logo-container > * {
+  position: relative;
+  z-index: 1; /* Para que el contenido quede sobre la capa de fondo */
+} 
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0; /* evita separación automática */
+  padding: 0;
+  margin: 0;
+}
+
+
+.main-logo {
+  width: 300px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.logo-icon {
+  width: 425px;
+  height: auto;
+}
+
+.logo-text {
+  max-width: 80%;
+  width: auto;
+  height: auto;
+  display: block;
+  padding:0;
+  margin: 0 auto;
+  margin-bottom: -35px;
+  object-fit: contain;
+}
+
+
+.side-img {
+  width: 425px;
+  height: auto;
+  margin-top: -45px;
+  padding: 0;
+  display: block;
+}
+
+
+ .booster_Box {
+  background-color:white; 
+  padding: 40px 90px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.booster_box-title {
+  color: black;
+  font-size: 38px;
+  margin-top: 5px;
+  margin-bottom: 80px;
+  width: 100%;}
+
+.booster_box img {
+  width: 100%; 
+  max-width: 1000px; 
+  margin-bottom: 80px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+
+.booster_box img:hover {
+  transform: scale(1.05); /* agranda 5% */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}  
+  
+.boosters {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  min-height: 500px;
+  background-image: url('img/booster/pokemon-stellar-crown.png'); /* tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;   /* Evita que se repita */
+  background-attachment: fixed;
+  
+  color: white;
+  
+  
+}
+
+.boosters::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* capa oscura transparente */
+  z-index: 1;
+}
+
+.boosters h2,
+.boosters img {
+  position: relative;
+  z-index: 2; /* que queden por encima del fondo */
+}
+
+.boosters h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #fff; /* blanco para contraste */
+}
+
+.boosters img {
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.boosters img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 6px rgba(11, 187, 187, 0.6), 
+              0 0 30px 10px rgba(232, 36, 205, 0.4); /* efecto contorno doble */
+}
+
+.imagen.releases img {
+  opacity: 1;
+  transform: none;
+  display: block;
+}
+
+
+.slide-in {
+   opacity: 0;
+  transform: translateX(100px); /* derecha por defecto */
+  transition: all 1s ease-out;
+  position: relative;
+}
+
+.slide-in.left {
+  transform: translateX(-100px);
+}
+
+.slide-in.right {
+  transform: translateX(100px);
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.new_arrivals {
+  width: 100%; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+  padding: 120px 0; 
+  background-color: rgb(16, 6, 87);
+}
+
+.new_arrivals_title{
+  color: white;
+  font-size: 38px;
+  margin-top: 5px;
+  margin-bottom: 70px;
+  width: 100%;
+  text-align: center;
+}
+
+.new_arrivals img {
+  width: 100%; 
+  max-width: 1000px; 
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*Efecto al pasar el mouse */
+.new_arrivals img:hover {
+  transform: scale(1.05); /* agranda 5% */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.etb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px; 
+}
+
+.etb_title{
+   color: black;
+  font-size: 38px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.etb{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+ 
+ 
+}
+
+
+.etb img {
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px; 
+}
+
+.etb img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+
+.collections {
+  background-color:white; 
+  padding: 40px 90px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.collections-title {
+  color: black;
+  font-size: 38px;
+  margin-top: 5px;
+  margin-bottom: 80px;
+  width: 100%;}
+
+.collections img {
+  width: 100%; 
+  max-width: 1000px; 
+  margin-bottom: 80px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+
+.collections img:hover {
+  transform: scale(1.05); /* agranda 5% */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.Expansions-title {
+  text-align: center;
+  color: aliceblue;
+  font-size: 38px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.Expansions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: rgb(16, 6, 87);
+ 
+}
+
+
+.Expansions img {
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+
+
+
+.Expansions img:hover {
+  transform: rotate(5deg);
+}
+
+
+
+.carousel_section{
+  background-color:rgb(16, 6, 87);
+  padding: 52px ;
+}
+
+.poki_carousel {
+  width: 70%;
+  max-width: 970%;
+  aspect-ratio: 16 / 9; 
+  margin: 0 auto;
+  position:relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.poki_images_slides {
+  display: flex;
+  width:  100%; /* 👈 100% x 3 imágenes */
+  animation: deslizar 15s infinite;
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+.poki_images_slides a {
+  flex: 0 0 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.poki_images_slides img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; 
+
+  
+}
+
+/* 🎞️ Animación */
+@keyframes deslizar {
+  0% { transform: translateX(0%); }
+  10% { transform: translatex(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(-300%); }
+  
+}
+
+
+
+
+.banner_inferior {
+  background: linear-gradient(136deg, #0bbbbb 10%, #e824cd 90%);
+  padding: 40px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+   margin-top: auto
+}
+
+.social_icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* separación entre íconos */
+}
+
+.social_icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social_icons img:hover {
+  transform: scale(1.2); /* animación al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.product-card {
+  background-color: #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; /* indica que es interactivo */
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.05); /* levanta y agranda */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5); /* sombra más intensa */
+  background-color: #2c3e50; /* cambio sutil de fondo */
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1); 
+}
+
+.add-to-cart {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #2563eb;
+  transform: scale(1.05); /* efecto al botón */
+}
+
+#product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9fafb; /* Fondo claro para que contraste */
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    width: 100%;
+  }
+}
+
+.cart-button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #333; 
+  padding: 5px;
+}
+
+.cart-button img {
+  width: 28px;
+  height: 28px;
+}
+
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+}

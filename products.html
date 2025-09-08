@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hoenn Tcg store</title>
+  <link rel="stylesheet" href="estilo.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+
+  <!-- Header principal -->
+  <header class="main-header">
+    <div class="logopoki">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pokémon_logo.svg" alt="Pokémon Logo" />
+    </div>
+
+    <!-- Menu-->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="products.html?category=booster"><i class="fas fa-fire"></i> Booster</a></li>
+        <li><a href="products.html?category=etb"><i class="fas fa-box-open"></i> ETBs</a></li>
+        <li><a href="products.html?category=new_arrival"><i class="fas fa-star"></i> New Arrival</a></li>
+        <li><a href="products.html?category=collection"><i class="fas fa-layer-group"></i> Collection</a></li>
+        <li><a href="products.html?category=booster_box"><i class="fas fa-globe"></i> Booster Box</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón de carrito -->
+    <button id="btn-cart" class="cart-button">
+      <img src="./img/svg/Captura_de_pantalla_2025-09-03_182023-removebg-preview.png" alt="Carrito" class="cart-icon">
+      <span id="cart-count">0</span>
+    </button>
+    <div id="cart-container" class="cart-container"></div>
+    <button id="btn-login" class="btn-login">Sign In</button>
+  </header>
+
+  <!-- Modal oculto -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="close">&times;</span>
+      <h2 id="modal-title">Login</h2>
+      <form id="auth-form">
+        <label for="username">User:</label>
+        <input type="text" id="username" name="username" placeholder="User" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password" required />
+        <div id="email-container" style="display:none;">
+          <label for="email">email:</label>
+          <input type="email" id="email" name="email" placeholder="Email" />
+        </div>
+        <button type="submit" id="auth-submit">Login</button>
+      </form>
+      <p id="auth-message" style="margin-top:10px; font-weight:bold;"></p>
+      <p id="toggle-text">
+        Don't have an account? <a href="#" id="toggle-auth">Register</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Logo e imágenes -->
+  <div class="logo-container">
+    <img src="/img/mira.png" class="side-img flipped" />
+    <div class="logo">
+      <img src="/img/LETRAS HOENN.png" alt="HOENN TCG STORE" class="logo-text" />
+      <img src="/img/logo.png" class="side-img" />
+    </div>
+    <img src="/img/kora.png" class="logo-icon" />
+  </div>
+
+  <!-- Contenedor de productos -->
+  <div id="product-list" class="product-list"></div>
+
+  <!-- Banner inferior y redes -->
+  <div class="banner_inferior">
+    <h2>Follow us</h2>
+    <div class="social_icons">
+      <a href="#"><img src="./img/svg/instagram-1-svgrepo-com.svg"/></a>
+      <a href="#"><img src="./img/svg/whatsapp-svgrepo-com.svg"/></a>
+      <a href="#"><img src="./img/svg/facebook-1-svgrepo-com.svg"/></a>
+    </div>
+    <div class="imagen banner">
+      <img src="" alt=""/>
+    </div>
+  </div>
+
+<!-- Contenedor de productos -->
+<div id="product-list" class="product-list"></div>
+
+<script>
+const container = document.getElementById("product-list");
+
+function loadProducts(category = null) {
+  fetch("json/products.json")
+    .then(res => res.json())
+    .then(products => {
+      const filtered = category ? products.filter(p => p.category === category) : products;
+      container.innerHTML = "";
+
+      if (!filtered || filtered.length === 0) {
+        container.innerHTML = "<p>No hay productos en esta categoría.</p>";
+        return;
+      }
+
+      filtered.forEach(product => {
+        const imagePng = `img/${product.category}/${product.id}.png`;
+        const imageJpg = `img/${product.category}/${product.id}.jpg`;
+        const fallbackImage = `img/default-product.png`;
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <div class="product-image">
+            <img src="${imagePng}" alt="${product.name}" onerror="this.onerror=null; this.src='${imageJpg}'; this.onerror=function(){this.src='${fallbackImage}'};">
+          </div>
+          <h3>${product.name}</h3>
+          <p>${product.description || "No description available"}</p>
+          <strong>${product.price ? "$" + product.price.toFixed(2) : "N/A"}</strong>
+          <p>Status: ${product.status}</p>
+          <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error("Error al cargar productos:", err);
+      container.innerHTML = "<p>Error al cargar productos.</p>";
+    });
+}
+
+// Leer categoría desde URL
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category") || null;
+loadProducts(category);
+
+// Carrito y usuario
+window.addEventListener('DOMContentLoaded', () => {
+  const username = sessionStorage.getItem('username');
+  const btnLogin = document.getElementById('btn-login');
+  if (username && btnLogin) btnLogin.textContent = `Hi, ${username}`;
+  loadCart();
+});
+
+function loadCart() {
+  const cartCount = document.getElementById('cart-count');
+  const cartContainer = document.getElementById('cart-container');
+  let cart = JSON.parse(sessionStorage.getItem('cart') || "[]");
+
+  cartContainer.innerHTML = "";
+  let total = 0;
+
+  if (!cart || cart.length === 0) {
+    cartContainer.innerHTML = "<p>The cart is empty.</p>";
+    cartCount.textContent = 0;
+    return;
+  }
+
+  cart.forEach(item => {
+    total += item.price * item.quantity;
+    const div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = `<p>${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}</p>
+                     <button onclick="removeFromCart(${item.id})">Eliminar</button>`;
+    cartContainer.appendChild(div);
+  });
+
+  const totalDiv = document.createElement("div");
+  totalDiv.className = "cart-total";
+  totalDiv.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
+  cartContainer.appendChild(totalDiv);
+
+  cartCount.textContent = cart.length;
+}
+
+function addToCart(productId) {
+  fetch("json/products.json")
+    .then(res => res.json())
+    .then(products => {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+
+      let cart = JSON.parse(sessionStorage.getItem('cart') || "[]");
+      const existing = cart.find(item => item.id === productId);
+      if (existing) existing.quantity += 1;
+      else cart.push({...product, quantity: 1});
+
+      sessionStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    });
+}
+
+function removeFromCart(productId) {
+  let cart = JSON.parse(sessionStorage.getItem('cart') || "[]");
+  cart = cart.filter(item => item.id !== productId);
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+  loadCart();
+}
+</script>
+
+<script src="auth.js"></script>
+
+</body>
+</html>

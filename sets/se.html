@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoenn Tcg store - Destined Rivals</title>
+  <link rel="stylesheet" href="../estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+<header class="main-header">
+  <div class="logopoki">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pokémon_logo.svg" alt="Pokémon Logo">
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#"><i class="fas fa-fire"></i> Booster</a></li>
+      <li><a href="#"><i class="fas fa-box-open"></i> ETBs</a></li>
+      <li><a href="#"><i class="fas fa-star"></i> New Arrivals</a></li>
+      <li><a href="#"><i class="fas fa-layer-group"></i> Collections</a></li>
+      <li><a href="#"><i class="fas fa-globe"></i> Expansions</a></li>
+    </ul>
+  </nav>
+
+  <button id="btn-login" class="btn-login">Sign In</button>
+</header>
+
+<!-- Modal Login -->
+<div id="modal-login" class="modal">
+  <div class="modal-content">
+    <span id="modal-close" class="close">&times;</span>
+    <form>
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" placeholder="Usuario" required />
+      
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" placeholder="Contraseña" required />
+      
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- Logo + banner -->
+<div class="logo-container">
+  <img src="/img/mira.png" class="side-img flipped"/>
+  <div class="logo">
+    <img src="img/LETRAS HOENN.png" alt="HOENN TCG STORE" class="logo-text"/>
+    <img src="/img/logo.png" class="side-img"  />
+  </div>
+  <img src="/img/kora.png" class="logo-icon"  />
+</div>
+
+<!-- Lista de productos -->
+<div id="product-list" class="product-list"></div>
+
+<!-- Banner inferior -->
+<div class="banner_inferior">
+  <h2>Follow us</h2>
+  <div class="social_icons">
+    <a href="#"><img src="../img/svg/instagram-1-svgrepo-com.svg"/></a>
+    <a href="#"><img src="../img/svg/whatsapp-svgrepo-com.svg"/></a>
+    <a href="#"><img src="../img/svg/facebook-1-svgrepo-com.svg"/></a>
+  </div>
+</div>
+
+
+
+<script>
+function renderProducts(products, expansionFolder) {
+  const container = document.getElementById('product-list');
+  container.innerHTML = '';
+
+  if (!products || products.length === 0) {
+    container.innerHTML = '<p>No hay productos en esta expansión.</p>';
+    return;
+  }
+
+  products.forEach((product) => {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+
+    // ruta de imagen relativa a esta carpeta
+const img = document.createElement('img');
+img.alt = product.name;
+
+
+img.src = `../img/expansiones/pe/${product.id}.png`;
+
+// Si no existe, prueba con .jpg
+img.onerror = () => {
+  img.onerror = () => { 
+    img.src = '../img/default.png'; // fallback final
+  };
+  img.src = `../img/expansiones/se/${product.id}.jpg`;
+};
+
+    card.innerHTML = `
+      <h3>${product.name}</h3>
+      <p>${product.description || ""}</p>
+      <p class="price">$${product.price.toFixed(2)}</p>
+      <button class="add-to-cart">Add to Cart</button>
+    `;
+
+    card.prepend(img);
+    container.appendChild(card);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const expansion = "Surging Sparks";
+
+    fetch("../json/products.json")
+
+    .then(res => res.json())
+    .then(allProducts => {
+      const filtered = allProducts.filter(p => p.expansion === expansion);
+      renderProducts(filtered, expansion);
+    })
+    .catch(() => {
+      document.getElementById('product-list').innerHTML =
+        '<p>Error al cargar productos.</p>';
+    });
+});
+</script>

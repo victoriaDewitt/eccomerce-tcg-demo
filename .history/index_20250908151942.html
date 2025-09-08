@@ -1,0 +1,274 @@
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoenn Tcg Store</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="./estilo.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- JS principal -->
+    <script src="estilo.js" defer></script>
+    <script src="products.js" defer></script>
+</head>
+<body>
+    
+<header class="main-header">
+  <div class="logopoki">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pokémon_logo.svg" alt="Pokémon Logo">
+  </div>
+
+<!-- Menu-->
+<nav class="main-nav">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="products.html?category=booster"><i class="fas fa-fire"></i> Booster</a></li>
+    <li><a href="products.html?category=etb"><i class="fas fa-box-open"></i> ETBs</a></li>
+    <li><a href="products.html?category=new_arrival"><i class="fas fa-star"></i> New Arrival</a></li>
+    <li><a href="products.html?category=collection"><i class="fas fa-layer-group"></i> Collection</a></li>
+    <li><a href="products.html?category=booster_box"><i class="fas fa-globe"></i> Booster Box</a></li>
+  </ul>
+</nav>
+
+
+    <!-- Botón de carrito -->
+    <button id="btn-cart" class="cart-button">
+     <img src="./img/svg/Captura_de_pantalla_2025-09-03_182023-removebg-preview.png" alt="Carrito" class="cart-icon">
+      <span id="cart-count">0</span>
+    </button>
+
+
+
+      <div id="cart-container" class="cart-container"></div>
+
+
+  <button id="btn-login" class="btn-login">Sign In</button>
+</header>
+
+
+
+
+<!-- Modal oculto -->
+<div id="modal-login" class="modal">
+  <div class="modal-content">
+    <span id="modal-close" class="close">&times;</span>
+    <h2 id="modal-title">Login</h2>
+
+    <form id="auth-form">
+      <label for="username">User:</label>
+      <input type="text" id="username" name="username" placeholder="User" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Password" required />
+
+      <!-- Campo extra solo para registro -->
+      <div id="email-container" style="display:none;">
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email" placeholder="Email" />
+      </div>
+
+      <button type="submit" id="auth-submit">Login</button>
+    </form>
+
+    <!-- Mensajes de error o éxito -->
+    <p id="auth-message" style="margin-top:10px; font-weight:bold;"></p>
+
+    <!-- Toggle entre login/registro -->
+    <p id="toggle-text">
+      Don't have an account? <a href="#" id="toggle-auth">Register</a>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+<!-- logo images -->
+<div class="logo-container">
+  <img src="img/mira.png" class="side-img flipped"/>
+  
+  <div class="logo">
+     <img src="img/LETRAS HOENN.png" alt="HOENN TCG STORE" class="logo-text"/>
+    
+    <img src="img/logo.png" class="side-img"  />
+  </div>
+
+  <img src="img/kora.png" class="logo-icon"  />
+</div>
+
+ <!-- Espacio artificial -->  
+<div style="height: 100px;"></div> 
+
+
+   <!-- Booster box category -->
+    <div class="booster_Box">
+        <h2 class="booster_box_title">Booster Box</h2>
+        <a href="products.html?category=booster_box"><img src="img/booster_box/Booster Box.png"/></a>
+    </div>
+
+<!-- Booster category -->
+    <div class="boosters">
+        <h2>Boosters</h2>
+        <a href="products.html?category=booster"><img src="img/boosters.png"/></a>
+    </div>
+    
+    
+
+    <div class="imagen releases">
+        <img src="img/surging_sparks_pack_with_hits_glow.webp" width="480" class="slide-in left"/>
+        <img src="img/Pokémon_Trading_Card_Game_logo.svg.png" width="500" />
+        <img src="img/paldean_fates_pack_glow.webp" width="400" class="slide-in right"/>  
+    </div>
+
+
+<!-- Espacio artificial -->
+<div style="height: 300px;"></div> 
+
+
+<!-- div carousel -->
+<section class="carousel_section">
+    <div class="poki_carousel">
+        <div class="poki_images_slides">
+            <a href="./sets/new_arrival.html"><img src="img/2.png"/></a>
+            <a href="./sets/pe.html"><img src="img/3.png"/></a>
+            <a href="./sets/destined_rivals.html"> <img src="img/4.png"/></a>
+            <a href="#"><img src="img/2.png" alt="Imagen 1 Duplicada"></a> </div>
+        </div>
+    </div>
+</section>
+
+
+   <!-- Etb section -->
+    <div class="etb">
+        <h2 class="etb_title">Elite Trainer Box</h2>
+        <a href="./sets/rivals.html"><img src="./img/etb/15.jpg" width="400" alt=""/></a>
+        <a href="./sets/journey.html"><img src="./img/etb/16.jpg" width="400" alt=""/></a>
+        <a href="./sets/prismatic.html"><img src="./img/etb/17.jpg" width="400" alt=""/></a>
+        <a href="./sets/surging.html"><img src="/img/etb//18.png" width="400" alt=""/></a>
+        <a href="./sets/stellar.html"><img src="/img/etb/19.png" width="400" alt=""/></a>
+        <a href="./sets/fable.html"><img src="/img/etb/20.png" width="400" alt="Fable ETB"/></a>
+        <a href="./sets/masquerade.html"><img src="/img/etb/21.png" width="400" alt=""/></a>
+        <a href="./sets/temporal.html"><img src="/img/etb/22.png" width="400" alt=""/></a>
+        <a href="./sets/fates.html"><img src="/img/etb/23.png "width="400" alt=""/></a>
+        <a href="./sets/paradox_gallade.html"><img src="/img/etb/24.png "width="400" alt=""/></a>
+        <a href="./sets/151.html"><img src="/img/etb/25.png" width="400" alt=""/></a>
+        <a href="./sets/obsidian.html"><img src="/img/etb/26.png" width="400" alt=""/></a>
+        <a href="./sets/paldeaevolves.html"><img src="/img/etb/27.png" width="400" alt=""/></a>
+        <a href="./sets/scarlet_miraido.html"><img src="./img/etb/28.2.png" width="400" alt=""/></a>
+    </div>
+    
+
+
+    
+<!-- Enlace colection new arrivals -->
+    <div class="new_arrivals">
+        <h2 class="new_arrivals_title">New arrivals</h2>
+        <a href="products.html?category=new_arrival"><img src="img/new_arrival/ambos.jpg"></a>
+    </div>
+
+
+
+
+   <!-- Enlace collection section -->
+    <div class="collections">
+        <h2 class="collections-title">Collections and more</h2>
+        <a href="products.html?category=collection" ><img src="img/collection/Captura de pantalla 2025-05-26 150636.png"></a>
+    </div>
+    
+
+
+
+   
+
+   
+  <!-- Enlaces por exp -->
+<div class="Expansions">
+    <h2 class="Expansions-title">TCG Expansions</h2>  
+    <a href="./sets/destined_rivals.html"><img src="img/dr.png" width="200" alt="Set DR"/></a>
+    <a href="sets/jr.html"><img src="img/jr.png" width="200" alt="Set JR"/></a>
+    <a href="sets/pe.html"><img src="img/pe.png" width="200" alt="Set PE"/></a>
+    <a href="sets/se.html"><img src="img/se.png" width="200" alt="Set SE"/></a>
+    <a href="sets/ec.html"><img src="img/ec.png" width="200" alt="Set EC"/></a>
+    <a href="sets/sf.html"><img src="img/sf.png" width="200" alt="Set SF"/></a>
+    <a href="sets/tm.html"><img src="img/tm.png" width="200" alt="Set TM"/></a>
+    <a href="sets/tf.html"><img src="img/tf.png" width="200" alt="Set TF"/></a>
+    <a href="sets/pf.html"><img src="img/pf.png" width="200" alt="Set PF"/></a>
+    <a href="sets/pr.html"><img src="img/pr.png" width="200" alt="Set PR"/></a>
+    <a href="sets/1511.html"><img src="img/151.png" width="200" alt="Set 151"/></a>
+    <a href="sets/of.html"><img src="img/of.png" width="200" alt="Set OF"/></a>
+    <a href="sets/paldeane.html"><img src="img/paldeane.png" width="200" alt="Set Paldean Evolved"/></a>
+    <a href="sets/base.html"><img src="img/base.png" width="200" alt="Set Base"/></a>
+</div>
+
+
+<!-- Bottom banner -->
+<div class="banner_inferior">
+    <h2>Follow us</h2>
+    <div class="social_icons">
+        <a href="#"><img src="img/svg/instagram-1-svgrepo-com.svg"/></a>
+        <a href="#"><img src="img/svg/whatsapp-svgrepo-com.svg"/></a>
+        <a href="#"><img src="img/svg/facebook-1-svgrepo-com.svg"/></a>
+    </div>
+</div>
+
+
+<!-- image banner-->
+<div class="imagen banner ">
+    <img src="" alt="">
+</div>
+
+
+
+<script>
+  
+
+    // Función para cargar productos según categoría
+    const container = document.getElementById("product-list");
+
+    function loadProducts(category) {
+      fetch(`http://localhost:8081/api/products/category/${category}`)
+        .then(res => {
+          if (!res.ok) throw new Error('Error al obtener productos');
+          return res.json();
+        })
+        .then(products => {
+          container.innerHTML = ''; // Limpia productos anteriores
+
+          if (!products || products.length === 0) {
+            container.innerHTML = '<p>No hay productos en esta categoría.</p>';
+            return;
+          }
+
+          products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+              <h3>${product.name}</h3>
+              <p>${product.description}</p>
+              <strong>$${product.price}</strong>
+            `;
+            container.appendChild(card);
+          });
+        })
+        .catch(err => {
+          console.error('Error al cargar productos:', err);
+          container.innerHTML = '<p>Error al cargar productos.</p>';
+        });
+    }
+
+    // Carga productos de la primera categoría por defecto
+    loadProducts('boosters');
+
+
+</script>
+<script src="auth.js"></script>
+
+</body>
+</html>
