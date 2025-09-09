@@ -16,7 +16,7 @@ La finalidad de este proyecto es mostrar un ejemplo funcional y ligero que puede
 - JSON  
 
 ## Demo online
-👉 [Enlace a GitHub Pages](https://pendienteee.github.io/tcg-store-demo/) 
+👉 [Enlace a GitHub Pages](https://victoriadewitt.github.io/eccomerce-tcg-demo/) 
 
 ## NOTA
 Este proyecto **no utiliza backend** ni base de datos.  
@@ -41,7 +41,7 @@ The purpose of this project is to showcase a functional and lightweight example 
 - JSON  
 
 ## Online Demo
-👉 [GitHub Pages Link](https://pendienteeee.github.io/tcg-store-demo/) *(add once you publish it)*
+👉 [GitHub Pages Link](https://victoriadewitt.github.io/eccomerce-tcg-demo/) *(add once you publish it)*
 
 ## NOTE
 This project **does not use backed** or a database
