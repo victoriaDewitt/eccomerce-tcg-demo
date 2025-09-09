@@ -46,12 +46,12 @@
 
 <!-- Logo + banner -->
 <div class="logo-container">
-  <img src="../img/mira.png" class="side-img flipped"/>
+  <img src="/img/mira.png" class="side-img flipped"/>
   <div class="logo">
-    <img src="../img/LETRAS HOENN.png" alt="HOENN TCG STORE" class="logo-text"/>
-    <img src="../img/logo.png" class="side-img"  />
+    <img src="img/LETRAS HOENN.png" alt="HOENN TCG STORE" class="logo-text"/>
+    <img src="/img/logo.png" class="side-img"  />
   </div>
-  <img src="../img/kora.png" class="logo-icon"  />
+  <img src="/img/kora.png" class="logo-icon"  />
 </div>
 
 <!-- Lista de productos -->
@@ -88,14 +88,14 @@ const img = document.createElement('img');
 img.alt = product.name;
 
 
-img.src = `../img/expansiones/tf/${product.id}.png`;
+img.src = `../img/expansiones/pe/${product.id}.png`;
 
 // Si no existe, prueba con .jpg
 img.onerror = () => {
   img.onerror = () => { 
     img.src = '../img/default.png'; // fallback final
   };
-  img.src = `../img/expansiones/tf/${product.id}.jpg`;
+  img.src = `../img/expansiones/sf/${product.id}.jpg`;
 };
 
     card.innerHTML = `
@@ -111,7 +111,7 @@ img.onerror = () => {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  const expansion = "Temporal Forces";
+  const expansion = "Shrouded Fable";
 
     fetch("../json/products.json")
 
